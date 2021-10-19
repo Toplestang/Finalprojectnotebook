@@ -1,0 +1,73 @@
++*In[2]:*+
+[source, r]
+----
+ library(RODBC);
+
+    dsn_driver <- "{IBM DB2 ODBC Driver}"
+    dsn_database <- "bludb"            # e.g. "bludb"
+    dsn_hostname <- "fbd88901-ebdb-4a4f-a32e-9822b9fb237b.c1ogj3sd0tgtu01qde00.databases.appdomain.cloud" # e.g "54a2f15b-5c0f-46df-8954-.databases.appdomain.cloud"
+    dsn_port <- "32731"   # e.g. "32733" 
+    dsn_protocol <- "TCPIP"            # i.e. "TCPIP"
+    dsn_uid <- "bfh81919>"        # e.g. "zjh17769"
+    dsn_pwd <- "h4Gr2KzhBX6Ga9FK"      # e.g. "zcwd4+8gbq9bm5k4"  
+    dsn_security <- "ssl"
+
+    conn_path <- paste("DRIVER=",dsn_driver,
+                  ";DATABASE=",dsn_database,
+                  ";HOSTNAME=",dsn_hostname,
+                  ";PORT=",dsn_port,
+                  ";PROTOCOL=",dsn_protocol,
+                  ";UID=",dsn_uid,
+                  ";PWD=",dsn_pwd,
+                  ";SECURITY=",dsn_security,        
+                    sep="")
+    conn <- odbcDriverConnect(conn_path)
+----
+
+
++*Out[2]:*+
+----
+Warning message in odbcDriverConnect(conn_path):
+“[RODBC] ERROR: state 08001, code -1336, message [IBM][CLI Driver] SQL1336N  The remote host "fbd88901-ebdb-4a4f-a32e-9822b9fb237b.c1ogj3sd0tgtu01qde00.databases.ap" was not found.  SQLSTATE=08001”Warning message in odbcDriverConnect(conn_path):
+“ODBC connection failed”----
+
+
++*In[3]:*+
+[source, r]
+----
+ library(RODBC);
+
+    dsn_driver <- "{IBM DB2 ODBC Driver}"
+    dsn_database <- "bludb"            # e.g. "bludb"
+    dsn_hostname <- "fbd88901-ebdb-4a4f-a32e-9822b9fb237b.c1ogj3sd0tgtu01qde00.databases.appdomain.cloud" # e.g "54a2f15b-5c0f-46df-8954-.databases.appdomain.cloud"
+    dsn_port <- "32731"   # e.g. "32733" 
+    dsn_protocol <- "TCPIP"            # i.e. "TCPIP"
+    dsn_uid <- "bfh81919"        # e.g. "zjh17769"
+    dsn_pwd <- "h4Gr2KzhBX6Ga9FK"      # e.g. "zcwd4+8gbq9bm5k4"  
+    dsn_security <- "ssl"
+
+    conn_path <- paste("DRIVER=",dsn_driver,
+                  ";DATABASE=",dsn_database,
+                  ";HOSTNAME=",dsn_hostname,
+                  ";PORT=",dsn_port,
+                  ";PROTOCOL=",dsn_protocol,
+                  ";UID=",dsn_uid,
+                  ";PWD=",dsn_pwd,
+                  ";SECURITY=",dsn_security,        
+                    sep="")
+    conn <- odbcDriverConnect(conn_path)
+----
+
+
++*Out[3]:*+
+----
+Warning message in odbcDriverConnect(conn_path):
+“[RODBC] ERROR: state 08001, code -1336, message [IBM][CLI Driver] SQL1336N  The remote host "fbd88901-ebdb-4a4f-a32e-9822b9fb237b.c1ogj3sd0tgtu01qde00.databases.ap" was not found.  SQLSTATE=08001”Warning message in odbcDriverConnect(conn_path):
+“ODBC connection failed”----
+
+
++*In[ ]:*+
+[source, r]
+----
+
+----
